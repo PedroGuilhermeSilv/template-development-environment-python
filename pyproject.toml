@@ -1,0 +1,29 @@
+[project]
+name = "api-python"
+version = "0.1.0"
+description = "Default template for PDM package"
+authors = [
+    {name = "guilherme", email = "vinespedro55@gmail.com"},
+]
+dependencies = [
+    "pylint>=3.0.3",
+    "flake8>=7.0.0",
+]
+requires-python = ">=3.11"
+readme = "README.md"
+license = {text = "MIT"}
+
+[build-system]
+requires = ["pdm-pep517>=0.12.0"]
+build-backend = "pdm.pep517.api"
+
+
+[tool.pdm]
+distribution = true
+
+[tool.pdm.dev-dependencies]
+dev = [
+    "pylint>=3.0.3",
+    "autopep8>=2.0.4",
+    "pytest>=8.0.1",
+]
