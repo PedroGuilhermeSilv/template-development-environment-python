@@ -23,16 +23,4 @@
     "python.testing.pytestEnabled": true,
     "python.testing.unittestEnabled": false,
 
-
-
-    //unittes
-    // "python.testing.unittestArgs": [
-    //     "-v",
-    //     "-s",
-    //     "./src",
-    //     "-p",
-    //     "test_*.py"
-    // ],
-    // "python.testing.pytestEnabled": false,
-    // "python.testing.unittestEnabled": true,
 }

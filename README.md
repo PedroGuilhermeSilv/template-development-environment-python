@@ -17,3 +17,7 @@
 - Unittest: Framework de teste embutido no Python, parte da biblioteca padrão, que fornece uma estrutura para escrever testes de unidade.
 
 - DevContainer: Extensão no vscode para rodar o container diretamente na IDE.
+
+## Observações:
+- Nos arquivos `docker-compose.yaml` `docker-compose.override.yaml` e `.devcontainer/devcontainer.json` altere o nome do container para o nome do seu projeto.
+- No Dockerfile eu adicionei um COPY .ssh caso queira commitar diretamente do container senão for do seu interesse basta remover.

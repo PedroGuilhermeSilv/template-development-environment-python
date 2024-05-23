@@ -10,6 +10,8 @@ RUN apt update && apt-get upgrade && apt install -y --no-install-recommends \
     fonts-powerline \
     && apt-get clean 
 
+
+
 RUN useradd -ms /bin/bash python
 
 RUN pip install pdm
@@ -27,7 +29,8 @@ ENV MY_PYTHON_PACKAGES=/home/python/app/__pypackages__/3.11
 ENV PYTHONPATH=${PYTHONPATH}/home/python/app/src
 ENV JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64
 ENV PATH $PATH:${MY_PYTHON_PACKAGES}/bin
-
+ENV PYTHONDONTWRITEBYTECODE 1
+ENV PYTHONUNBUFFERED 1
 
 RUN sh -c "$(wget -O- https://github.com/deluan/zsh-in-docker/releases/download/v1.1.5/zsh-in-docker.sh)" \
     -t https://github.com/romkatv/powerlevel10k \
