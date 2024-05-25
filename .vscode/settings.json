@@ -1,26 +1,19 @@
 {
-    "github.copilot.editor.enableCodeActions": true,
-    "github.copilot.editor.enableAutoCompletions": true,
-    "files.autoSave": "afterDelay",
-    "editor.quickSuggestionsDelay": 2,
-    "emmet.useInlineCompletions": true,
     "[python]": {
-        "editor.formatOnSave": true,
-        "editor.defaultFormatter": "charliermarsh.ruff"
+      "editor.defaultFormatter": "ms-python.black-formatter",
+      "editor.formatOnSave": true
     },
-    "ruff.lint.run": "onSave",
-    "python.autoComplete.extraPaths": [
-        "${workspaceFolder}/__pypackages__/3.11/lib",
+      "editor.codeActionsOnSave": {
+        "source.organizeImports": "explicit",
+        "source.fixAll": "explicit"
+      },
+    "python.testing.pytestArgs": [
+      "src",
     ],
     "python.analysis.extraPaths": [
-        "${workspaceFolder}/__pypackages__/3.11/lib",
+      "./src"
     ],
-    "python.testing.pytestArgs": [
-        "src",
-        "--ignore",
-        "__pypackages__"
-    ],
-    "python.testing.pytestEnabled": true,
+    "editor.tabSize": 4,
     "python.testing.unittestEnabled": false,
-
-}
+    "python.testing.pytestEnabled": true,
+  }
