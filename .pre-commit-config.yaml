@@ -1,0 +1,39 @@
+default_language_version:
+  python: python3
+exclude: ^.*\b(mocks)\b.*$, ^.devcontainer/.*$', ^.docker/.*$', ^.github/.*$', ^.vscode/.*$' , ^docs/.*$', Readme.md, ^.*\b(migrations)\b.*$, ^Dockerfile.*
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.5.0
+    hooks:
+      - id: check-ast
+      - id: check-case-conflict
+      - id: check-merge-conflict
+      - id: check-toml
+      - id: check-yaml
+      - id: debug-statements
+      - id: end-of-file-fixer
+      - id: trailing-whitespace
+
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.1.11
+    hooks:
+      - id: ruff
+        args:
+          - --fix
+          - --exit-non-zero-on-fix
+
+  - repo: https://github.com/psf/black
+    rev: 23.10.0
+    hooks:
+      - id: black
+        language_version: python3.11
+        exclude: ^.*\b(migrations)\b.*$
+
+  - repo: local
+    hooks:
+    - id: pytest
+      name: pytest
+      entry: ./.venv/bin/pytest
+      exclude: ^migrations
+      language: system
+      types: [python]
